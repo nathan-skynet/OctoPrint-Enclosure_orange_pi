@@ -5,7 +5,10 @@ from octoprint.util import RepeatedTimer
 from subprocess import Popen, PIPE
 from .ledstrip import LEDStrip
 import octoprint.plugin
-import RPi.GPIO as GPIO
+import orangepi.zero2
+from OPi import GPIO
+GPIO.setmode(orangepi.zero2.BOARD) 
+
 from flask import jsonify, request, make_response, Response
 from octoprint.server.util.flask import restricted_access
 from werkzeug.exceptions import BadRequest
